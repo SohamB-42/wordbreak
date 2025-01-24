@@ -1,0 +1,55 @@
+# Version format ex. "0.0.1"
+version: "0.0.1"                            # Flow specification version
+
+# Basic metadata for the agent
+metadata:
+  name: "word-break"                               # Unique identifier
+  description: "• Input: User provides a word for analysis • Phonetic conversion: Word is transformed into its phonetic representation • Definition retrieval: The meaning of the word is obtained from a dictionary or database • Sentence generation: An example sentence is created to demonstrate the word's usage in context • Output: Phonetic form, meaning, and sample sentence are presented to the user • Language learning aid: This flow can assist in vocabulary acquisition and pronunciation practice • Multifaceted understanding: Users gain insights into the word's sound, definition, and practical application • Potential for automation: This process could be implemented as a language learning tool or app • Customization options: The flow could be adapted for different languages or specialized vocabularies • Educational value: Helps reinforce word knowledge through multiple formats and contexts "       # Flow purpose
+  author: "sohamb"                              # Must match your account username
+  tags: ["summarization", "text-processing", "nlp"]                       # Keywords for categorization
+  private: false                                       # Access control setting
+
+# Define the input variables required
+inputs:
+    word:                                            #input parameter
+    type: string                                       # Currently only String format
+    description: "an input string that is to be operated on"  # Description of the input
+    required: true
+    example: "hello"                                   # Example value for the input
+
+# LLM configuration
+model:
+provider: "anthropic"                        # e.g., anthropic, openai, meta, etc.
+name: "claude-3.5-sonnet"                    # Specific model identifier
+
+# Prompt template configuration
+prompt: |
+You are a linguistic expert. Your task is to take a word, perform its phonetic breakdown, define it and then provide at least 5 different examples of application of that word
+
+  Text to operate on:
+  {word}
+
+ Please do all the above mentioned operations on this input.
+
+# ReadME configuration
+readme: |
+ # Word Analysis Tool
+
+A language learning aid that provides comprehensive insights into words, enhancing vocabulary acquisition and pronunciation skills.
+
+ ## Features
+
+- Phonetic conversion of input words
+- Definition retrieval from dictionary or database
+- Example sentence generation
+- Multi-format word presentation (sound, meaning, usage)
+- Adaptable for various languages and specialized vocabularies
+
+ ## How to Use
+
+1. Enter a word you want to analyze
+2. The tool converts the word to its phonetic form
+3. A definition is retrieved from the database
+4. An example sentence is generated to show word usage
+5. Review the output (phonetic form, meaning, and sample sentence)
+6. Use this information to enhance your understanding and pronunciation of the word
