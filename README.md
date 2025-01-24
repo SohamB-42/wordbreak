@@ -1,5 +1,5 @@
 # ReadME configuration
-readme: |
+
  # Word Analysis Tool
 
 A language learning aid that provides comprehensive insights into words, enhancing vocabulary acquisition and pronunciation skills.
